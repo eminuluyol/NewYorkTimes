@@ -1,9 +1,7 @@
 package com.taurus.newyorktimes.splash;
 
-import com.taurus.carpooling.core.BasePresenter;
-import com.taurus.carpooling.core.injection.Injector;
-import com.taurus.carpooling.network.model.BaseRequest;
-import com.taurus.carpooling.repository.model.PlaceMarkerDatabaseModel;
+import com.taurus.newyorktimes.core.BasePresenter;
+import com.taurus.newyorktimes.core.injection.Injector;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
