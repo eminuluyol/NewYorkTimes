@@ -2,7 +2,9 @@ package com.taurus.newyorktimes.splash;
 
 import com.taurus.newyorktimes.core.BasePresenter;
 import com.taurus.newyorktimes.core.injection.Injector;
+import com.taurus.newyorktimes.database.model.NewsEntity;
 import com.taurus.newyorktimes.network.model.BaseRequest;
+import com.taurus.newyorktimes.network.model.articlelist.ArticleWrapper;
 import com.taurus.newyorktimes.network.model.articlelist.NewsFeedsRequest;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -38,14 +40,14 @@ public class SplashPresenter extends BasePresenter<SplashView> {
         compositeDisposable.add(getApi().getNewsFeeds(request)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(PlaceMarkerDatabaseModel::createList)
+                .map(ArticleWrapper::createList)
                 .subscribe(this::handleResponse, this::handleError));
 
     }
 
-    private void handleResponse(List<PlaceMarkerDatabaseModel> placeMarkers) {
+    private void handleResponse(List<NewsEntity> news) {
 
-        if(placeMarkers.size() > 0) {
+        if(news.size() > 0) {
 
             compositeDisposable.add(Observable.fromCallable(() -> getDatabaseHandler().addAllPlaceMarkers(placeMarkers))
                     .subscribeOn(Schedulers.newThread())
