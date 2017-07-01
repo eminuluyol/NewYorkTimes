@@ -1,4 +1,7 @@
 <resources>
   <string name="app_name">NewYorkTimes</string>
   <string name="empty_generic_text">NO DATA</string>
+
+  <!-- News Feeds -->
+  <string name="news_feeds_title">News Feeds</string>
 </resources>

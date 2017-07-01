@@ -60,7 +60,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     private void handleError(Throwable throwable) {
 
         onProgressBarHide();
-        getView().showError(throwable.getMessage())
+        getView().showError(throwable.getMessage());
 
     }
 
