@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/cyan</color>
-    <color name="colorPrimaryDark">@color/cyanDark</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#e2e2e2</color>
     <color name="colorAccent">@color/gray</color>
 
     <color name="white">#FFFFFF</color>
