@@ -21,7 +21,8 @@ public class NewsFeedsActivity extends BaseSimpleActivity {
 
   private List<NewsFeedUIModel> newsFeeds;
 
-  @Nullable @Override protected BaseFragment getContainedFragment() {
+  @Nullable
+  @Override protected BaseFragment getContainedFragment() {
     return NewsFeedFragment.newInstance(newsFeeds);
   }
 
