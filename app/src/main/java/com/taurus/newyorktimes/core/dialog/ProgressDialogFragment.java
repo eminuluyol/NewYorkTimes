@@ -9,7 +9,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import com.hannesdorfmann.fragmentargs.annotation.Arg;
 import com.hannesdorfmann.fragmentargs.annotation.FragmentWithArgs;
-import com.taurus.carpooling.R;
+import com.taurus.newyorktimes.R;
 
 @FragmentWithArgs
 public class ProgressDialogFragment extends BaseDialogFragment {

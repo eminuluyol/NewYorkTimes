@@ -13,6 +13,8 @@ import butterknife.ButterKnife;
 import com.hannesdorfmann.fragmentargs.FragmentArgs;
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 import com.taurus.newyorktimes.R;
+import com.taurus.newyorktimes.core.dialog.ProgressDialogFragment;
+import com.taurus.newyorktimes.core.dialog.ProgressDialogFragmentBuilder;
 
 public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V>> extends MvpFragment<V, P>
         implements BaseView {

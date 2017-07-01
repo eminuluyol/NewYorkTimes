@@ -31,6 +31,7 @@ import com.hannesdorfmann.mosby.mvp.MvpActivity;
 
 import com.taurus.newyorktimes.R;
 import com.taurus.newyorktimes.core.dialog.ProgressDialogFragment;
+import com.taurus.newyorktimes.core.dialog.ProgressDialogFragmentBuilder;
 import com.taurus.newyorktimes.core.injection.Injector;
 import java.util.Arrays;
 
