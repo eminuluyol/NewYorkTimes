@@ -3,36 +3,44 @@ package com.taurus.newyorktimes.core;
 import android.app.Application;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.taurus.newyorktimes.network.retrofit.RetrofitNewYorkTimesApi;
+import com.taurus.newyorktimes.util.navigator.Navigator;
 import io.reactivex.disposables.CompositeDisposable;
 import javax.inject.Inject;
 
 public abstract class BasePresenter<V extends BaseView> extends MvpBasePresenter<V> {
 
-    @Inject
-    Application application;
+  @Inject
+  Application application;
 
-    @Inject RetrofitNewYorkTimesApi api;
+  @Inject
+  RetrofitNewYorkTimesApi api;
 
-    protected CompositeDisposable compositeDisposable;
+  @Inject
+  Navigator navigator;
 
-    public BasePresenter(){
-        compositeDisposable = new CompositeDisposable();
+  protected CompositeDisposable compositeDisposable;
+
+  public BasePresenter() {
+    compositeDisposable = new CompositeDisposable();
+  }
+
+  public Application getApplication() {
+    return application;
+  }
+
+  public RetrofitNewYorkTimesApi getApi() {
+    return api;
+  }
+
+  public Navigator getNavigator() {
+    return navigator;
+  }
+
+  public void clearCompositeDisposable() {
+
+    if (compositeDisposable != null) {
+
+      compositeDisposable.clear();
     }
-
-    public Application getApplication() {
-        return application;
-    }
-
-    public RetrofitNewYorkTimesApi getApi() {
-        return api;
-    }
-
-    public void clearCompositeDisposable() {
-
-        if (compositeDisposable != null) {
-
-            compositeDisposable.clear();
-        }
-    }
-
+  }
 }

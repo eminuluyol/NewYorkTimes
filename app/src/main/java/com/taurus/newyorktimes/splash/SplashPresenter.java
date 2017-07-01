@@ -47,43 +47,20 @@ public class SplashPresenter extends BasePresenter<SplashView> {
 
     private void handleResponse(List<NewsEntity> news) {
 
-        if(news.size() > 0) {
-
-            compositeDisposable.add(Observable.fromCallable(() -> getDatabaseHandler().addAllPlaceMarkers(placeMarkers))
-                    .subscribeOn(Schedulers.newThread())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(this::handleDBResponse, this::handleError));
-
-        }
+        onNewsFeedsActivityRequested(news);
 
     }
 
-    private void handleDBResponse(List<PlaceMarkerDatabaseModel> placeMarkers) {
 
-        onProgressBarHide();
-        onPlaceMarkerActivityRequested(placeMarkers);
-
-    }
-
-    private void onPlaceMarkerActivityRequested(List<PlaceMarkerDatabaseModel> placeMarkers) {
-        getNavigator().toPlaceMarkerActivity(placeMarkers).clearBackStack().navigate();
+    private void onNewsFeedsActivityRequested(List<NewsEntity> news) {
+        getNavigator().toPlaceMarkerActivity(NewsEntity.createList(news)).clearBackStack().navigate();
     }
 
 
     private void handleError(Throwable throwable) {
 
         onProgressBarHide();
-        List<PlaceMarkerDatabaseModel> placeMarkers = getDatabaseHandler().getAllPlaceMarkers();
-
-        if(placeMarkers.size() > 0) {
-            getNavigator().toPlaceMarkerActivity(placeMarkers).clearBackStack().navigate();
-        } else {
-
-            if(isViewAttached()) {
-                getView().showError(throwable.getMessage());
-            }
-
-        }
+        getView().showError(throwable.getMessage())
 
     }
 

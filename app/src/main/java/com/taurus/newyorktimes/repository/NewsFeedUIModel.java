@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * Created by eminuluyol on 01/07/2017.
  */
 
-public class News implements Parcelable {
+public class NewsFeedUIModel implements Parcelable {
 
   private String webURL;
 
@@ -21,10 +21,10 @@ public class News implements Parcelable {
 
   private String mainHeadline;
 
-  public News() {
+  public NewsFeedUIModel() {
   }
 
-  protected News(Parcel in) {
+  protected NewsFeedUIModel(Parcel in) {
     webURL = in.readString();
     snippet = in.readString();
     imageURl = in.readString();
@@ -33,13 +33,13 @@ public class News implements Parcelable {
     mainHeadline = in.readString();
   }
 
-  public static final Creator<News> CREATOR = new Creator<News>() {
-    @Override public News createFromParcel(Parcel in) {
-      return new News(in);
+  public static final Creator<NewsFeedUIModel> CREATOR = new Creator<NewsFeedUIModel>() {
+    @Override public NewsFeedUIModel createFromParcel(Parcel in) {
+      return new NewsFeedUIModel(in);
     }
 
-    @Override public News[] newArray(int size) {
-      return new News[size];
+    @Override public NewsFeedUIModel[] newArray(int size) {
+      return new NewsFeedUIModel[size];
     }
   };
 

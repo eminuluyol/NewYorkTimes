@@ -7,6 +7,6 @@ package com.taurus.newyorktimes.database;
 public class Config {
 
   public static final String NEWS_TABLE_NAME = "news";
-  public static final String DATABASE_NAME = "News.db";
+  public static final String DATABASE_NAME = "NewsFeedUIModel.db";
 
 }
