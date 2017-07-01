@@ -65,7 +65,10 @@ dependencies {
   compile "com.android.support:recyclerview-v7:$rootProject.supportLibVersion"
   compile "com.android.support:support-v4:$rootProject.supportLibVersion"
   compile "com.android.support:animated-vector-drawable:$rootProject.supportLibVersion"
-  compile "com.android.support:customtabs:$rootProject.supportLibVersion"
+  compile "com.android.support:customtabs:$rootProject.supportLibVersion"\
+
+  compile 'com.jakewharton:butterknife:8.5.1'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
   testCompile 'junit:junit:4.12'
 }
