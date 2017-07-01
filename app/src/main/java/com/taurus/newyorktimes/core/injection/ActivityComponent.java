@@ -1,8 +1,5 @@
 package com.taurus.newyorktimes.core.injection;
-
-import com.taurus.carpooling.core.NoOpPresenter;
-import com.taurus.carpooling.placemarker.PlaceMarkerPresenter;
-import com.taurus.carpooling.splash.SplashPresenter;
+import com.taurus.newyorktimes.core.NoOpPresenter;
 import dagger.Subcomponent;
 
 @ActivityScope
@@ -10,9 +7,5 @@ import dagger.Subcomponent;
 public interface ActivityComponent {
 
     void inject(NoOpPresenter noOpPresenter);
-
-    void inject(SplashPresenter splashPresenter);
-
-    void inject(PlaceMarkerPresenter placeMarkerPresenter);
 
 }
