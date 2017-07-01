@@ -2,6 +2,8 @@ package com.taurus.newyorktimes.splash;
 
 import com.taurus.newyorktimes.core.BasePresenter;
 import com.taurus.newyorktimes.core.injection.Injector;
+import com.taurus.newyorktimes.network.model.BaseRequest;
+import com.taurus.newyorktimes.network.model.articlelist.NewsFeedsRequest;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -29,11 +31,11 @@ public class SplashPresenter extends BasePresenter<SplashView> {
         }
     }
 
-    void onCardFeedsRequested() {
+    void onNewsFeedsRequested() {
 
-        final BaseRequest request = new BaseRequest();
+        final NewsFeedsRequest request = new NewsFeedsRequest(0);
 
-        compositeDisposable.add(getApi().getCarFeeds(request)
+        compositeDisposable.add(getApi().getNewsFeeds(request)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(PlaceMarkerDatabaseModel::createList)

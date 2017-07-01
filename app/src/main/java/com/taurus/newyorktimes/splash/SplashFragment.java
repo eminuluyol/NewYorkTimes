@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import butterknife.BindView;
 import com.taurus.newyorktimes.R;
+import com.taurus.newyorktimes.core.BaseFragment;
 
 public class SplashFragment extends BaseFragment<SplashView, SplashPresenter> implements SplashView {
 
@@ -33,7 +34,7 @@ public class SplashFragment extends BaseFragment<SplashView, SplashPresenter> im
         super.onViewCreated(view, savedInstanceState);
 
         getPresenter().onProgressBarShow();
-        getPresenter().onCardFeedsRequested();
+        getPresenter().onNewsFeedsRequested();
 
     }
 
