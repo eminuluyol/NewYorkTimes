@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import com.hannesdorfmann.fragmentargs.FragmentArgs;
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
-import com.taurus.carpooling.R;
-import com.taurus.carpooling.core.dialog.ProgressDialogFragment;
-import com.taurus.carpooling.core.dialog.ProgressDialogFragmentBuilder;
+import com.taurus.newyorktimes.R;
 
 public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V>> extends MvpFragment<V, P>
         implements BaseView {
