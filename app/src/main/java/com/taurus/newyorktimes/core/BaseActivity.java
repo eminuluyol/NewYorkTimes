@@ -28,10 +28,8 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
-import com.taurus.carpooling.R;
-import com.taurus.carpooling.core.dialog.ProgressDialogFragment;
-import com.taurus.carpooling.core.dialog.ProgressDialogFragmentBuilder;
-import com.taurus.carpooling.core.injection.Injector;
+
+import com.taurus.newyorktimes.R;
 import java.util.Arrays;
 
 public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends MvpActivity<V, P>
