@@ -10,7 +10,6 @@ public interface NewYorkTimesService {
 
   @GET("svc/search/v2/articlesearch.json")
   Flowable<ArticleWrapper> getNewsFeeds(
-      @Query("page") int page,
-      @Query("apikey") String apikey
+      @Query("page") int page
   );
 }

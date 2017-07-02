@@ -22,9 +22,6 @@ public class APIRestClient {
 
     static synchronized Retrofit getInstanceRx() {
 
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BASIC);
-
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -33,7 +30,7 @@ public class APIRestClient {
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
                 .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
-                .addInterceptor(logging)
+                .addInterceptor(new RequestInterceptor())
                 .build();
 
         return new Retrofit.Builder()

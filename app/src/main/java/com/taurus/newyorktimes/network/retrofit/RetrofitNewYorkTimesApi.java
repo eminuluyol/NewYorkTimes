@@ -15,7 +15,7 @@ public class RetrofitNewYorkTimesApi implements NewYorkTimesApi {
     public Flowable<ArticleWrapper> getNewsFeeds(NewsFeedsRequest request) {
 
         NewYorkTimesService endpoints = APIRestClient.getInstanceRx().create(NewYorkTimesService.class);
-        return endpoints.getNewsFeeds(request.getPage(), ApiConstants.API_KEY);
+        return endpoints.getNewsFeeds(request.getPage());
 
     }
 }
