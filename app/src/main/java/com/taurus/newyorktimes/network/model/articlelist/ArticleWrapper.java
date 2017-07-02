@@ -4,6 +4,7 @@ package com.taurus.newyorktimes.network.model.articlelist;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.taurus.newyorktimes.database.model.NewsEntity;
+import com.taurus.newyorktimes.network.ApiConstants;
 import com.taurus.newyorktimes.util.ListConverter;
 import java.util.List;
 
@@ -56,7 +57,6 @@ public class ArticleWrapper {
         model.setWebURL(item.getWebUrl());
         model.setSnippet(item.getSnippet());
         model.setImageURl(addImageUrl(item));
-        model.setAuthorName(item.getByline().getOriginal());
         model.setSource(item.getSource());
         model.setMainHeadline(item.getHeadline().getMain());
 
@@ -69,7 +69,7 @@ public class ArticleWrapper {
 
            String url = item.getMultimedia().get(0).getUrl();
 
-            return "http://www.nytimes.com/" + url;
+            return ApiConstants.IMAGE_ENDPOINT_PREFIX + url;
 
         }
 

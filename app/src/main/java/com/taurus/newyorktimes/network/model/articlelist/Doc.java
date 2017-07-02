@@ -10,60 +10,63 @@ public class Doc {
     @SerializedName("web_url")
     @Expose
     private String webUrl;
+
     @SerializedName("snippet")
     @Expose
     private String snippet;
+
     @SerializedName("lead_paragraph")
     @Expose
     private String leadParagraph;
-    @SerializedName("abstract")
-    @Expose
-    private Object _abstract;
-    @SerializedName("print_page")
-    @Expose
-    private Object printPage;
-    @SerializedName("blog")
-    @Expose
-    private List<Object> blog = null;
+
     @SerializedName("source")
     @Expose
     private String source;
+
     @SerializedName("multimedia")
     @Expose
     private List<Multimedium> multimedia = null;
+
     @SerializedName("headline")
     @Expose
     private Headline headline;
+
     @SerializedName("keywords")
     @Expose
     private List<Keyword> keywords = null;
+
     @SerializedName("pub_date")
     @Expose
     private String pubDate;
+
     @SerializedName("document_type")
     @Expose
     private String documentType;
+
     @SerializedName("news_desk")
     @Expose
     private String newsDesk;
+
     @SerializedName("section_name")
     @Expose
     private String sectionName;
+
     @SerializedName("subsection_name")
     @Expose
     private String subsectionName;
-    @SerializedName("byline")
-    @Expose
-    private Byline byline;
+
     @SerializedName("type_of_material")
     @Expose
     private String typeOfMaterial;
+
     @SerializedName("_id")
     @Expose
     private String id;
+
     @SerializedName("word_count")
     @Expose
     private int wordCount;
+
     @SerializedName("slideshow_credits")
     @Expose
     private Object slideshowCredits;
@@ -90,30 +93,6 @@ public class Doc {
 
     public void setLeadParagraph(String leadParagraph) {
         this.leadParagraph = leadParagraph;
-    }
-
-    public Object getAbstract() {
-        return _abstract;
-    }
-
-    public void setAbstract(Object _abstract) {
-        this._abstract = _abstract;
-    }
-
-    public Object getPrintPage() {
-        return printPage;
-    }
-
-    public void setPrintPage(Object printPage) {
-        this.printPage = printPage;
-    }
-
-    public List<Object> getBlog() {
-        return blog;
-    }
-
-    public void setBlog(List<Object> blog) {
-        this.blog = blog;
     }
 
     public String getSource() {
@@ -186,14 +165,6 @@ public class Doc {
 
     public void setSubsectionName(String subsectionName) {
         this.subsectionName = subsectionName;
-    }
-
-    public Byline getByline() {
-        return byline;
-    }
-
-    public void setByline(Byline byline) {
-        this.byline = byline;
     }
 
     public String getTypeOfMaterial() {

@@ -1,17 +1,23 @@
 package com.taurus.newyorktimes.splash;
 
+import android.util.Log;
 import com.taurus.newyorktimes.core.BasePresenter;
 import com.taurus.newyorktimes.core.injection.Injector;
 import com.taurus.newyorktimes.database.model.NewsEntity;
 import com.taurus.newyorktimes.network.model.BaseRequest;
 import com.taurus.newyorktimes.network.model.articlelist.ArticleWrapper;
 import com.taurus.newyorktimes.network.model.articlelist.NewsFeedsRequest;
+import com.taurus.newyorktimes.repository.NewsRepository;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
+import javax.inject.Inject;
 
 public class SplashPresenter extends BasePresenter<SplashView> {
+
+    @Inject
+    NewsRepository newsRepository;
 
     SplashPresenter() {
         Injector.getInstance().getActivityComponent().inject(this);
@@ -33,14 +39,11 @@ public class SplashPresenter extends BasePresenter<SplashView> {
         }
     }
 
-    void onNewsFeedsRequested() {
+    void onNewsFeedsRequested(boolean onlineRequired) {
 
-        final NewsFeedsRequest request = new NewsFeedsRequest(0);
-
-        compositeDisposable.add(getApi().getNewsFeeds(request)
+        compositeDisposable.add(newsRepository.loadNews(onlineRequired)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(ArticleWrapper::createList)
                 .subscribe(this::handleResponse, this::handleError));
 
     }
@@ -59,6 +62,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
 
     private void handleError(Throwable throwable) {
 
+        Log.e("Hata", "" + throwable.getMessage());
         onProgressBarHide();
         getView().showError(throwable.getMessage());
 

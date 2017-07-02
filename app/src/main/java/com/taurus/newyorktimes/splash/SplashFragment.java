@@ -34,7 +34,7 @@ public class SplashFragment extends BaseFragment<SplashView, SplashPresenter> im
         super.onViewCreated(view, savedInstanceState);
 
         getPresenter().onProgressBarShow();
-        getPresenter().onNewsFeedsRequested();
+        getPresenter().onNewsFeedsRequested(true);
 
     }
 

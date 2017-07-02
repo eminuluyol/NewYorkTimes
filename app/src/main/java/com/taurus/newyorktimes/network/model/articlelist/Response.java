@@ -10,6 +10,7 @@ public class Response {
     @SerializedName("meta")
     @Expose
     private Meta meta;
+
     @SerializedName("docs")
     @Expose
     private List<Doc> docs = null;

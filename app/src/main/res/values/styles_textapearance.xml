@@ -11,10 +11,6 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="TextStyle.14.Cyan">
-        <item name="android:textColor">@color/colorPrimary</item>
-    </style>
-
     <style name="TextStyle.14.Black">
         <item name="android:textColor">@color/black</item>
     </style>
@@ -44,9 +40,7 @@
     <style name="TextStyle.18.White">
         <item name="android:textColor">@color/white</item>
     </style>
-    <style name="TextStyle.18.Cyan">
-        <item name="android:textColor">@color/cyan</item>
-    </style>
+
     <style name="TextStyle.18.Black54">
         <item name="android:textColor">@color/black54</item>
     </style>
@@ -60,10 +54,6 @@
 
     <style name="TextStyle.20.White">
         <item name="android:textColor">@color/white</item>
-    </style>
-
-    <style name="TextStyle.20.Cyan">
-        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="TextStyle.24">
@@ -107,10 +97,6 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextStyle.18.Cyan.Bold">
-        <item name="android:textStyle">bold</item>
-    </style>
-
     <style name="TextStyle.18.Black54.Bold">
         <item name="android:textStyle">bold</item>
     </style>
@@ -123,20 +109,8 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextStyle.20.Cyan.Bold">
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="TextStyle.20.Bold.CyanDark">
-        <item name="android:textColor">@color/cyanDark</item>
-    </style>
-
     <style name="TextStyle.24.Bold">
         <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="TextStyle.24.Bold.CyanDark">
-        <item name="android:textColor">@color/cyanDark</item>
     </style>
 
     <style name="TextStyle.24.Bold.Black">
@@ -149,10 +123,6 @@
 
     <style name="TextStyle.34.Bold.Black">
         <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="TextStyle.34.Bold.CyanDark">
-        <item name="android:textColor">@color/cyanDark</item>
     </style>
 
     <style name="TextStyle.45.Bold">

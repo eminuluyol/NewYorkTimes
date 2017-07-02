@@ -1,5 +1,6 @@
 package com.taurus.newyorktimes.network.retrofit;
 
+import com.taurus.newyorktimes.network.ApiConstants;
 import java.io.IOException;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -12,15 +13,14 @@ import okhttp3.Response;
 
 public class RequestInterceptor implements Interceptor {
 
-  private final String API_KEY = "d7d008858ee64d3fa5f8d8b6a839b435";
-
-  @Override public Response intercept(Chain chain) throws IOException {
+  @Override
+  public Response intercept(Chain chain) throws IOException {
 
     Request originalRequest = chain.request();
     HttpUrl originalHttpUrl = originalRequest.url();
 
     HttpUrl url = originalHttpUrl.newBuilder()
-        .addQueryParameter("apikey", API_KEY)
+        .addQueryParameter("apikey", ApiConstants.API_KEY)
         .build();
 
     Request request = originalRequest.newBuilder().url(url).build();

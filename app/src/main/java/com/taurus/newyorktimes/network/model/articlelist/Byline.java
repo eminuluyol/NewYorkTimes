@@ -7,23 +7,13 @@ import java.util.List;
 
 public class Byline {
 
-    @SerializedName("person")
-    @Expose
-    private List<Person> person = null;
     @SerializedName("original")
     @Expose
     private String original;
+
     @SerializedName("organization")
     @Expose
     private String organization;
-
-    public List<Person> getPerson() {
-        return person;
-    }
-
-    public void setPerson(List<Person> person) {
-        this.person = person;
-    }
 
     public String getOriginal() {
         return original;

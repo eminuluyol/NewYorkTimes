@@ -9,15 +9,19 @@ public class Person {
     @SerializedName("organization")
     @Expose
     private String organization;
+
     @SerializedName("role")
     @Expose
     private String role;
+
     @SerializedName("rank")
     @Expose
     private int rank;
+
     @SerializedName("firstname")
     @Expose
     private String firstname;
+
     @SerializedName("lastname")
     @Expose
     private String lastname;

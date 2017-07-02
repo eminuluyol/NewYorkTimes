@@ -5,6 +5,7 @@ import com.taurus.newyorktimes.network.NewYorkTimesApi;
 import com.taurus.newyorktimes.network.model.BaseRequest;
 import com.taurus.newyorktimes.network.model.articlelist.ArticleWrapper;
 import com.taurus.newyorktimes.network.model.articlelist.NewsFeedsRequest;
+import com.taurus.newyorktimes.network.retrofit.RetrofitNewYorkTimesApi;
 import com.taurus.newyorktimes.repository.NewsDataSource;
 import io.reactivex.Flowable;
 import java.util.List;
@@ -18,15 +19,15 @@ import javax.inject.Singleton;
 @Singleton
 public class NewsRemoteDataSource implements NewsDataSource {
 
-  private NewYorkTimesApi newYorkTimesApi;
+  private RetrofitNewYorkTimesApi newYorkTimesApi;
 
   @Inject
-  public NewsRemoteDataSource(NewYorkTimesApi newYorkTimesApi) {
+  public NewsRemoteDataSource(RetrofitNewYorkTimesApi newYorkTimesApi) {
     this.newYorkTimesApi = newYorkTimesApi;
   }
 
-
-  @Override public Flowable<List<NewsEntity>> loadNews(boolean forceRemote) {
+  @Override
+  public Flowable<List<NewsEntity>> loadNews(boolean forceRemote) {
 
     final NewsFeedsRequest request = new NewsFeedsRequest(0);
 
@@ -34,13 +35,15 @@ public class NewsRemoteDataSource implements NewsDataSource {
 
   }
 
-  @Override public void addPlaceMarker(NewsEntity newsDatabaseModel) {
+  @Override
+  public void addPlaceMarker(NewsEntity newsDatabaseModel) {
     //Currently, we do not need this for remote source.
     throw new UnsupportedOperationException("Unsupported operation");
 
   }
 
-  @Override public void clearData() {
+  @Override
+  public void clearData() {
     //Currently, we do not need this for remote source.
     throw new UnsupportedOperationException("Unsupported operation");
   }

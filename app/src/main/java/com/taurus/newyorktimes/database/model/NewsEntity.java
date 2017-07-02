@@ -34,6 +34,14 @@ public class NewsEntity {
   public NewsEntity() {
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
   public String getWebURL() {
     return webURL;
   }
@@ -93,7 +101,6 @@ public class NewsEntity {
     model.setWebURL(item.getWebURL());
     model.setSnippet(item.getSnippet());
     model.setImageURl(item.getImageURl());
-    model.setAuthorName(item.getAuthorName());
     model.setSource(item.getSource());
     model.setMainHeadline(item.getMainHeadline());
 
