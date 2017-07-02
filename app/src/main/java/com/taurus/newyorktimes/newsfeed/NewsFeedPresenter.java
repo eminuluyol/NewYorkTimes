@@ -26,4 +26,9 @@ public class NewsFeedPresenter extends BasePresenter<NewsFeedView> {
       getView().hideEmptyView();
     }
   }
+
+  void onNewsFeedListRequested() {
+
+
+  }
 }

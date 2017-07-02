@@ -1,4 +1,4 @@
-package com.taurus.newyorktimes.repository;
+package com.taurus.newyorktimes.newsfeed.adapter.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

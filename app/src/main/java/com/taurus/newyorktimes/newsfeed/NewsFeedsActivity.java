@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import com.taurus.newyorktimes.R;
 import com.taurus.newyorktimes.core.BaseFragment;
 import com.taurus.newyorktimes.core.BaseSimpleActivity;
-import com.taurus.newyorktimes.repository.NewsFeedUIModel;
+import com.taurus.newyorktimes.newsfeed.adapter.model.NewsFeedUIModel;
 import java.util.ArrayList;
 import java.util.List;
 

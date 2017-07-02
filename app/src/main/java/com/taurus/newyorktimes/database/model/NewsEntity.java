@@ -3,9 +3,7 @@ package com.taurus.newyorktimes.database.model;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import com.taurus.newyorktimes.database.Config;
-import com.taurus.newyorktimes.network.model.articlelist.ArticleWrapper;
-import com.taurus.newyorktimes.network.model.articlelist.Doc;
-import com.taurus.newyorktimes.repository.NewsFeedUIModel;
+import com.taurus.newyorktimes.newsfeed.adapter.model.NewsFeedUIModel;
 import com.taurus.newyorktimes.util.ListConverter;
 import java.util.List;
 
