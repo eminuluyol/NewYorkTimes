@@ -26,6 +26,15 @@
         android:launchMode="singleTop"
         android:screenOrientation="portrait"/>
 
+    <activity
+        android:name=".newsfeeddetail.NewsFeedDetailActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/DetailTheme">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".newsfeed.NewsFeedsActivity" />
+    </activity>
+
   </application>
 
 </manifest>

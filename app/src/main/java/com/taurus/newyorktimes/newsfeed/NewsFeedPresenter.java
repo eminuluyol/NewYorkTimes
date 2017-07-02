@@ -1,10 +1,9 @@
 package com.taurus.newyorktimes.newsfeed;
 
+import com.taurus.newyorktimes.R;
 import com.taurus.newyorktimes.baseadapter.model.GenericItem;
 import com.taurus.newyorktimes.core.BasePresenter;
 import com.taurus.newyorktimes.core.injection.Injector;
-import com.taurus.newyorktimes.database.model.NewsEntity;
-import com.taurus.newyorktimes.network.model.BaseRequest;
 import com.taurus.newyorktimes.network.model.articlelist.ArticleWrapper;
 import com.taurus.newyorktimes.network.model.articlelist.NewsFeedsRequest;
 import com.taurus.newyorktimes.newsfeed.adapter.model.NewsFeedUIModel;
@@ -83,5 +82,9 @@ public class NewsFeedPresenter extends BasePresenter<NewsFeedView> {
 
      }
 
+  }
+
+  void onNewsFeedDetailRequested(String webURL) {
+    getNavigator().toNewsFeedSDetailActivity(webURL).withAnimation(R.anim.right_in, R.anim.left_out).navigate();
   }
 }

@@ -48,7 +48,9 @@ public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresen
 
     NewsFeedFragment fragment = new NewsFeedFragment();
     fragment.setArguments(args);
+
     return fragment;
+
   }
 
   @NonNull
@@ -64,7 +66,7 @@ public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresen
 
     getBundleFromArgs();
 
-    if(newsFeeds.size() > 0 && newsFeeds != null) {
+    if(newsFeeds != null && newsFeeds.size() > 0) {
 
       newsFeedRecyclerView.setOnEndReachedListener(this);
       newsFeedRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -113,6 +115,11 @@ public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresen
 
   @Override
   public void onItemClick(View view) {
+
+    NewsFeedUIModel model = (NewsFeedUIModel) view.getTag();
+    String webURL = model.getWebURL();
+
+    getPresenter().onNewsFeedDetailRequested(webURL);
 
   }
 }

@@ -4,11 +4,7 @@ import android.util.Log;
 import com.taurus.newyorktimes.core.BasePresenter;
 import com.taurus.newyorktimes.core.injection.Injector;
 import com.taurus.newyorktimes.database.model.NewsEntity;
-import com.taurus.newyorktimes.network.model.BaseRequest;
-import com.taurus.newyorktimes.network.model.articlelist.ArticleWrapper;
-import com.taurus.newyorktimes.network.model.articlelist.NewsFeedsRequest;
 import com.taurus.newyorktimes.repository.NewsRepository;
-import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
@@ -56,7 +52,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
 
 
     private void onNewsFeedsActivityRequested(List<NewsEntity> news) {
-        getNavigator().toPlaceMarkerActivity(NewsEntity.createList(news)).clearBackStack().navigate();
+        getNavigator().toNewsFeedActivity(NewsEntity.createList(news)).clearBackStack().navigate();
     }
 
 
