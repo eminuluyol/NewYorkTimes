@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -210,6 +211,10 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V
     @Override
     public void setTitle(@StringRes int titleId) {
         toolbarTitle.setText(titleId);
+    }
+
+    public void setTitleTextColor(@ColorInt int colorId) {
+        toolbarTitle.setTextColor(colorId);
     }
 
     /**

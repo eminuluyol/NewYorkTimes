@@ -10,10 +10,6 @@ import com.taurus.newyorktimes.core.BaseFragment;
 import com.taurus.newyorktimes.core.BaseSimpleActivity;
 
 
-/**
- * Created by eminuluyol on 02/07/2017.
- */
-
 public class NewsFeedDetailActivity extends BaseSimpleActivity {
 
   private static final String EXTRA_WEB_URL = "web_url";
@@ -41,6 +37,7 @@ public class NewsFeedDetailActivity extends BaseSimpleActivity {
     super.onCreate(savedInstanceState);
 
     setTitle(R.string.news_detail);
+    setTitleTextColor(getResources().getColor(R.color.white));
     setHomeAsUpEnabled(true);
 
   }

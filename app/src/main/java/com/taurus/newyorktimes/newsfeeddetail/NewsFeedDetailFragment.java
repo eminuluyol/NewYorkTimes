@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -30,23 +31,26 @@ public class NewsFeedDetailFragment extends BaseSimpleFragment {
     return R.layout.fragment_news_detail;
   }
 
-  public static BaseFragment newInstance(String webUrl) {
+  public static NewsFeedDetailFragment newInstance(String webUrl) {
 
     Bundle args = new Bundle();
     args.putString(NewsFeedDetailFragment.EXTRA_WEB_URL, webUrl);
 
-    NewsFeedFragment fragment = new NewsFeedFragment();
+    NewsFeedDetailFragment fragment = new NewsFeedDetailFragment();
     fragment.setArguments(args);
     return fragment;
   }
 
-  @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+  @Override
+  public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
     getBundleFromArgs();
 
     webView.getSettings().setJavaScriptEnabled(true);
     webView.loadUrl(webUrl);
+    webView.setWebViewClient(new WebViewClient());
+
   }
 
   private void getBundleFromArgs() {
