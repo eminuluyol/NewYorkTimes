@@ -5,6 +5,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.taurus.newyorktimes.database.model.NewsEntity;
 import com.taurus.newyorktimes.network.ApiConstants;
+import com.taurus.newyorktimes.newsfeed.adapter.model.NewsFeedUIModel;
 import com.taurus.newyorktimes.util.ListConverter;
 import java.util.List;
 
@@ -44,6 +45,23 @@ public class ArticleWrapper {
 
     public void setCopyright(String copyright) {
         this.copyright = copyright;
+    }
+
+    public static List<NewsFeedUIModel> createUIList(ArticleWrapper articleWrapper) {
+        return ListConverter.convert(articleWrapper.getResponse().getDocs(), item -> createUIFeeds(item));
+    }
+
+    private static NewsFeedUIModel createUIFeeds(Doc item) {
+
+        final NewsFeedUIModel model = new NewsFeedUIModel();
+
+        model.setWebURL(item.getWebUrl());
+        model.setSnippet(item.getSnippet());
+        model.setImageURl(addImageUrl(item));
+        model.setSource(item.getSource());
+        model.setMainHeadline(item.getHeadline().getMain());
+
+        return model;
     }
 
     public static List<NewsEntity> createList(ArticleWrapper articleWrapper) {

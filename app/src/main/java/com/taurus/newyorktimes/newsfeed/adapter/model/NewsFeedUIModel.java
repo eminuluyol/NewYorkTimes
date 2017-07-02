@@ -2,20 +2,19 @@ package com.taurus.newyorktimes.newsfeed.adapter.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.taurus.newyorktimes.baseadapter.model.GenericItem;
 
 /**
  * Created by eminuluyol on 01/07/2017.
  */
 
-public class NewsFeedUIModel implements Parcelable {
+public class NewsFeedUIModel extends GenericItem implements Parcelable {
 
   private String webURL;
 
   private String snippet;
 
   private String imageURl;
-
-  private String authorName;
 
   private String source;
 
@@ -28,7 +27,6 @@ public class NewsFeedUIModel implements Parcelable {
     webURL = in.readString();
     snippet = in.readString();
     imageURl = in.readString();
-    authorName = in.readString();
     source = in.readString();
     mainHeadline = in.readString();
   }
@@ -67,14 +65,6 @@ public class NewsFeedUIModel implements Parcelable {
     this.imageURl = imageURl;
   }
 
-  public String getAuthorName() {
-    return authorName;
-  }
-
-  public void setAuthorName(String authorName) {
-    this.authorName = authorName;
-  }
-
   public String getSource() {
     return source;
   }
@@ -99,7 +89,6 @@ public class NewsFeedUIModel implements Parcelable {
     parcel.writeString(webURL);
     parcel.writeString(snippet);
     parcel.writeString(imageURl);
-    parcel.writeString(authorName);
     parcel.writeString(source);
     parcel.writeString(mainHeadline);
   }

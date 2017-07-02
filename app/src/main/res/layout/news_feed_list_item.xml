@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CardViewStyle">
 
-</LinearLayout>
+  <LinearLayout
+      android:id="@+id/newsFeedLinearLayoutContainer"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingBottom="@dimen/space_default"
+      android:background="?attr/selectableItemBackground"
+      android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/newsFeedImageViewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/newsFeedTextViewSource"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space_default"
+        android:paddingTop="@dimen/space_small"
+        android:textAppearance="@style/TextStyle.14.Black54"/>
+
+    <TextView
+        android:id="@+id/newsFeedTextViewMainHeadLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space_default"
+        android:paddingRight="@dimen/space_default"
+        android:paddingTop="@dimen/space_medium"
+        android:textAppearance="@style/TextStyle.20.Black.Bold"/>
+
+    <TextView
+        android:id="@+id/newsFeedTextViewSnippet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space_default"
+        android:paddingEnd="@dimen/space_default"
+        android:paddingTop="@dimen/space_small"
+        android:textAppearance="@style/TextStyle.14.Black54"/>
+
+  </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,6 +1,7 @@
 package com.taurus.newyorktimes.newsfeed;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import com.taurus.newyorktimes.baseadapter.RecyclerAdapter;
 import com.taurus.newyorktimes.baseadapter.model.GenericItem;
 import com.taurus.newyorktimes.core.BaseFragment;
 import com.taurus.newyorktimes.customview.EndlessRecyclerView;
+import com.taurus.newyorktimes.listener.OnItemClickListener;
 import com.taurus.newyorktimes.newsfeed.adapter.delegate.NewsFeedAdapterDelegate;
 import com.taurus.newyorktimes.newsfeed.adapter.model.NewsFeedUIModel;
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import java.util.List;
  */
 
 public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresenter>
-        implements  NewsFeedView, EndlessRecyclerView.OnEndReachedListener {
+        implements  NewsFeedView, EndlessRecyclerView.OnEndReachedListener, OnItemClickListener {
 
   private static final String EXTRA_NEWS_FEEDS = "news_feeds";
 
@@ -34,7 +36,8 @@ public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresen
   private List<GenericItem> newsFeeds;
   private RecyclerAdapter newsFeedAdapter;
 
-  @Override protected int getLayoutResId() {
+  @Override
+  protected int getLayoutResId() {
     return R.layout.fragment_news_feed;
   }
 
@@ -48,7 +51,9 @@ public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresen
     return fragment;
   }
 
-  @Override public NewsFeedPresenter createPresenter() {
+  @NonNull
+  @Override
+  public NewsFeedPresenter createPresenter() {
     return new NewsFeedPresenter();
   }
 
@@ -63,7 +68,7 @@ public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresen
 
       newsFeedRecyclerView.setOnEndReachedListener(this);
       newsFeedRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-      newsFeedAdapter = RecyclerAdapter.with(new NewsFeedAdapterDelegate());
+      newsFeedAdapter = RecyclerAdapter.with(new NewsFeedAdapterDelegate(this));
       newsFeedRecyclerView.setAdapter(newsFeedAdapter);
       newsFeedAdapter.swapItems(newsFeeds);
       newsFeedRecyclerView.setLoading(false);
@@ -98,10 +103,16 @@ public class NewsFeedFragment extends BaseFragment<NewsFeedView,  NewsFeedPresen
 
   }
 
-  @Override public void onEndReached() {
+  @Override
+  public void onEndReached() {
 
     newsFeedRecyclerView.setLoading(true);
     getPresenter().onNewsFeedListRequested();
+
+  }
+
+  @Override
+  public void onItemClick(View view) {
 
   }
 }

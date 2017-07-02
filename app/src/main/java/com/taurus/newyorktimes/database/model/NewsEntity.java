@@ -23,8 +23,6 @@ public class NewsEntity {
 
   private String imageURl;
 
-  private String authorName;
-
   private String source;
 
   private String mainHeadline;
@@ -62,14 +60,6 @@ public class NewsEntity {
 
   public void setImageURl(String imageURl) {
     this.imageURl = imageURl;
-  }
-
-  public String getAuthorName() {
-    return authorName;
-  }
-
-  public void setAuthorName(String authorName) {
-    this.authorName = authorName;
   }
 
   public String getSource() {
